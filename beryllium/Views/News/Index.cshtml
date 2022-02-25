@@ -1,0 +1,27 @@
+﻿@model List<News>
+
+<div class="gtco-section">
+    <div class="gtco-container">
+        <div class="row">
+            <div class=" gtco-news">
+                <h2>News</h2>
+                <ul id="news">
+                    @foreach (News item in Model)
+                    {
+                        <li>
+                            <a href="#">
+                                <span class="post-date">@item.Time</span>
+                                <h3>@item.Title</h3>
+                                <p>@item.Text</p>
+                            </a>
+                        </li>
+                    }
+                </ul>
+                <p><a href="/News/Index" id="load-more-news" class="btn btn-sm btn-special">View More News</a></p>
+            </div>
+            <!-- END News -->
+        </div>
+    </div>
+</div>
+
+<input type="hidden" id="newsCount" name="name" value="@ViewBag.Count" />
